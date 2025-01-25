@@ -29,11 +29,14 @@ export function useFetchUncheckedNotificationCount():
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      onerror(err) {
+      onerror(err: Error) {
         onStoreChange();
         throw err;
       },
-      async onopen(response) {
+      async onopen(response: {
+        ok: boolean;
+        headers: { get: (arg0: string) => string | null };
+      }) {
         if (
           !response.ok ||
           !(response.headers.get("content-type") === EventStreamContentType)
@@ -45,7 +48,7 @@ export function useFetchUncheckedNotificationCount():
       onclose() {
         throw new Error("サーバーエラー");
       },
-      onmessage(event) {
+      onmessage(event: { event: string; data: string }) {
         if (event.event === "error") {
           throw Error("サーバーエラー");
         }

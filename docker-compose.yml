@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   node:
     working_dir: /app
@@ -15,4 +14,4 @@ services:
     container_name: "api"
     ports:
       - "3001:4010"
-    command: mock  -h 0.0.0.0 https://hack-31.github.io/point-app-backend/openapi.yml
+    command: mock  -h 0.0.0.0 https://Yuki-TU.github.io/point-app-backend/openapi.yml
