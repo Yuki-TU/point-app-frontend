@@ -1,6 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import { createBrowserRouter, redirect, RouteObject } from "react-router-dom";
+import { createBrowserRouter, redirect, RouteObject } from "react-router";
 
 import { Error } from "@/components/Error";
 import { useAuth } from "@/lib/auth";
@@ -22,6 +22,8 @@ export const getAppRoutes = () => {
           message="このページはすでに削除されているか、URLが間違っている可能性があります。"
         />
       ),
+      element: null,
+      HydrateFallback: () => <div>loading</div>,
       loader: async () => {
         if (!user) {
           return redirect("/login");

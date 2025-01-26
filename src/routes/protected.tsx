@@ -2,8 +2,8 @@ import { CircularProgress } from "@mui/material";
 import { Box } from "@mui/system";
 import { AxiosError } from "axios";
 import { Suspense } from "react";
-import { Outlet, RouteObject } from "react-router-dom";
-import { useRouteError } from "react-router-dom";
+import { Outlet, RouteObject } from "react-router";
+import { useRouteError } from "react-router";
 
 import { Error } from "@/components/Error";
 import { MainLayout } from "@/components/Layout";

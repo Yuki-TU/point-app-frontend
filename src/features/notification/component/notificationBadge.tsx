@@ -1,7 +1,7 @@
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Badge, IconButton } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import { useFetchUncheckedNotificationCount } from "../api/getUncheckedNotificationCount";
 

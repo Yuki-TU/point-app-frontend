@@ -3,7 +3,7 @@ import { LoadingButton } from "@mui/lab";
 import { Box, TextField } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import { z } from "zod";
 
 import { ArrowLink } from "@/components/ArrowLink";

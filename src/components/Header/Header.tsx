@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 
 import { NotificationBadge } from "@/features/notification";
 import { useAuth } from "@/lib/auth";
@@ -40,7 +40,7 @@ export const Header = React.memo(() => {
           sx={{ flexGrow: 1 }}
           align="center"
         >
-          <Link to="/">ポイントアプリ</Link>
+          <Link to={{ pathname: "/" }}>ポイントアプリ</Link>
         </Typography>
         {user && (
           <>
