@@ -1,7 +1,7 @@
 services:
   node:
     working_dir: /app
-    image: node:18-alpine
+    image: node:20-alpine
     volumes:
       - ./:/app
     tty: true
@@ -12,6 +12,7 @@ services:
   api:
     image: stoplight/prism:latest
     container_name: "api"
+    platform: linux/amd64
     ports:
       - "3001:4010"
     command: mock  -h 0.0.0.0 https://Yuki-TU.github.io/point-app-backend/openapi.yml
