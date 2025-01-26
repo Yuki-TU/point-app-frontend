@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 import { getNotification, getNotificationQuery } from "../api/getNotification";
 

@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { useQueryErrorResetBoundary } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import { useRouteError } from "react-router-dom";
+import { useRouteError } from "react-router";
 
 type Props = {
   status?: string;
