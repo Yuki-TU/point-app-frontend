@@ -15,4 +15,4 @@ services:
     platform: linux/amd64
     ports:
       - "3001:4010"
-    command: mock  -h 0.0.0.0 https://Yuki-TU.github.io/point-app-backend/openapi.yml
+    command: mock --host 0.0.0.0 --multiprocess false https://Yuki-TU.github.io/point-app-backend/openapi.yml

@@ -6,11 +6,12 @@ import {
 } from "@mui/material";
 import { QueryClientProvider } from "@tanstack/react-query";
 import * as React from "react";
+import { useMemo } from "react";
 import { RouterProvider } from "react-router";
 import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 
-import { AuthProvider } from "@/lib/auth";
+import { AuthProvider, useAuth } from "@/lib/auth";
 import { queryClient } from "@/lib/react-query";
 import { getAppRoutes } from "@/routes";
 
@@ -52,5 +53,7 @@ export const AppProvider = () => {
  * そうしないとエラーになる
  */
 const WrapRouterProvider = () => {
-  return <RouterProvider router={getAppRoutes()} />;
+  const { user } = useAuth();
+  const router = useMemo(() => getAppRoutes(), [user]);
+  return <RouterProvider router={router} />;
 };
