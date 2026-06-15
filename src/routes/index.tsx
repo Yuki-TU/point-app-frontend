@@ -1,7 +1,5 @@
 import "react-toastify/dist/ReactToastify.css";
 
-import { CircularProgress } from "@mui/material";
-import { Box } from "@mui/system";
 import { createBrowserRouter, redirect, RouteObject } from "react-router";
 
 import { Error } from "@/components/Error";
@@ -24,21 +22,8 @@ export const getAppRoutes = () => {
           message="このページはすでに削除されているか、URLが間違っている可能性があります。"
         />
       ),
-      element: null,
-      HydrateFallback: () => (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          height="100vh"
-        >
-          <CircularProgress />
-        </Box>
-      ),
       loader: async () => {
         if (!user) {
-          // TODO: もしかしたらこっちでリダイレクトしないといけないかも
-          // window.location.pathname = "/login";
           return redirect("/login");
         }
         return redirect("/users");
