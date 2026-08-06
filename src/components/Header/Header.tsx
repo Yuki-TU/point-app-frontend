@@ -76,6 +76,14 @@ export const Header = React.memo(() => {
                 アカウント情報
               </MenuItem>
               <MenuItem
+                onClick={() => {
+                  closeMenu();
+                  navigate("/settings/notification");
+                }}
+              >
+                設定
+              </MenuItem>
+              <MenuItem
                 onClick={async () => {
                   closeMenu();
                   logout();

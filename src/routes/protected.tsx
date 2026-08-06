@@ -14,6 +14,7 @@ import { LoginPage } from "@/pages/Login";
 import { NotificationPage } from "@/pages/Notification";
 import { NotificationsPage } from "@/pages/Notifications";
 import { PasswordUpdatePage } from "@/pages/PasswordUpdate";
+import { SettingsNotification } from "@/pages/SettingsNotification";
 import { UsersPage } from "@/pages/Users";
 import storage from "@/utils/storage";
 
@@ -96,6 +97,12 @@ export const getProtectedRoutes = (): RouteObject[] => {
             {
               path: "notifications/:notificationId",
               element: <NotificationPage />,
+            },
+            {
+              path: "settings",
+              children: [
+                { path: "notification", element: <SettingsNotification /> },
+              ],
             },
           ],
         },

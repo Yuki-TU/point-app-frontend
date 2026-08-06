@@ -56,6 +56,15 @@ export function useFetchUncheckedNotificationCount():
           event.data
         ) as GetUncheckedNotificationCountResponse;
         data$.current = parsedData;
+        // 通知
+        if (Notification.permission === "granted" && parsedData.count > 0) {
+          new Notification("ポイントアプリ", {
+            body: parsedData.count + "件の未読通知があります",
+            silent: false,
+            icon: "/icon-192.png",
+            image: "/icon-192.png",
+          });
+        }
         onStoreChange();
       },
       signal: controller.signal,
